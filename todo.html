@@ -1,0 +1,145 @@
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("workshop-2Kqhw3qST0o-unsplash.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    div{  
+        box-sizing: border-box;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+        display:grid;
+        align-items:center;
+        padding-top:10px;
+        color:white;
+        margin-top:0px;
+        font-family:cursive;
+
+        
+        
+
+
+    }
+    #msg{
+        padding:10px;
+        width:300px;
+    }
+    #btn{
+        border:1px solid black;
+        padding:10px;
+        background-color: chocolate;
+        width:100px;
+        justify-content: center;
+        text-align: center;
+        font-family: cursive;
+        display:flex;
+        
+    }
+    #btn:hover{
+        background-color: green;
+    }
+
+    ul  {
+    list-style: none;
+    width: 400px;             
+    justify-content: space-between; 
+    align-items: center;
+    
+}
+
+    #clickit{
+        background-color:chocolate;
+        margin:20px;
+        padding:10px;
+        color:black;
+        font-family: cursive;
+    
+    }
+
+    #clickit:hover{
+        background-color: red;
+    }
+    #button2:hover{
+        background-color: red;
+    }
+
+    #button2{
+         background-color:chocolate;
+         margin-left: 20px;
+         padding:10px;
+        color:black;
+        font-family:cursive;
+
+    }
+    #msg{
+        box-shadow: blanchedalmond;
+        box-sizing: border-box;
+        background: transparent;
+        color:white;
+        font-weight:20px;
+        font-family:cursive;
+    }
+    .h1{
+        font-weight:bolder;
+        font-family: cursive;
+        font-size:100px;
+        margin-top: 0;
+      
+        color:chocolate;
+    }
+
+    
+
+
+
+</style>
+
+
+
+<body>
+    <h1 class="h1">TO-DO LIST</h1>
+        <div class="menu">
+        <input id="msg" placeholder="Type your To-do list"><br>
+        <button  id="btn" onclick="updatetext()">Add</button>
+
+        <ul>
+            <li id="list-container">To Delete All
+            <button id="clickit" onclick="deleteitem(event)">Click here</button><br>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+
+
+ 
+<script>
+    var message = document.getElementById("msg")
+
+    var h = document.getElementById("list-container")
+    
+      
+
+    function updatetext(){
+
+        var listitem=document.createElement("li")
+
+        listitem.innerHTML=message.value + "<button id='button2' onclick='deleteitem(event)'>Delete</button>"  + "<br>" + "<br>"
+
+    
+
+        h.append(listitem)
+    }
+
+    function deleteitem(){
+
+        event.target.parentElement.remove()
+        
+    }
+
+</script>
